@@ -15,7 +15,7 @@ const Registration = () => {
     });
 
     const onSubmit = (data) => {
-        axios.post("http://localhost:3001/auth", data).then(() => {
+        axios.post("https://social-network-harold1415.herokuapp.com/auth", data).then(() => {
             console.log(data);
         });
     };

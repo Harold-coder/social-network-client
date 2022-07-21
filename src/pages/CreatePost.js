@@ -18,7 +18,7 @@ const CreatePost = () => {
     })
 
     const onSubmit = (data) => {
-        axios.post("http://localhost:3001/posts", data).then((response) => {
+        axios.post("https://social-network-harold1415.herokuapp.com/posts", data).then((response) => {
             navigate("/");
         });
     };

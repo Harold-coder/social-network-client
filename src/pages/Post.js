@@ -13,17 +13,17 @@ const Post = () => {
     const {authState} = useContext(AuthContext);
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/posts/byId/${id}`).then((response) => {
+        axios.get(`https://social-network-harold1415.herokuapp.com/posts/byId/${id}`).then((response) => {
             setPostObject(response.data);
         })
 
-        axios.get(`http://localhost:3001/comments/${id}`).then((response) => {
+        axios.get(`https://social-network-harold1415.herokuapp.com/comments/${id}`).then((response) => {
             setComments(response.data);
         })
     }, [id]);
 
     const addComment = () => {
-      axios.post("http://localhost:3001/comments", {commentBody: newComment , PostId: id},
+      axios.post("https://social-network-harold1415.herokuapp.com/comments", {commentBody: newComment , PostId: id},
       {
         headers: {
           accessToken: localStorage.getItem("accessToken"),
@@ -43,7 +43,7 @@ const Post = () => {
     };
 
     const deleteComment = (id) => {
-      axios.delete(`http://localhost:3001/comments/${id}`, {headers: {accessToken: localStorage.getItem("accessToken")}, 
+      axios.delete(`https://social-network-harold1415.herokuapp.com/comments/${id}`, {headers: {accessToken: localStorage.getItem("accessToken")}, 
       }).then(() => {
         setComments(comments.filter((value) => {
           return value.id !== id;

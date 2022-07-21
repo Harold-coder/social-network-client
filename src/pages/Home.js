@@ -9,7 +9,7 @@ const Home = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        axios.get("http://localhost:3001/posts").then((response) => {
+        axios.get("https://social-network-harold1415.herokuapp.com/posts").then((response) => {
         setListOfPosts(response.data);
         })
      }, []);

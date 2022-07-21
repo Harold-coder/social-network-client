@@ -18,7 +18,7 @@ function App() {
   });
 
   useEffect(() => {
-    axios.get("http://localhost:3001/auth/auth", {headers: {
+    axios.get("https://social-network-harold1415.herokuapp.com/auth/auth", {headers: {
       accessToken: localStorage.getItem('accessToken')
     }}).then((response) => {
       if (response.data.error) {
